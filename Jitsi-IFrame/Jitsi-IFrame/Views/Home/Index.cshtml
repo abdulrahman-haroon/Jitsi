@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">JITSI</h1>
+</div>
+<div class="container">
+    <div id="meet" style="text-align: center;"></div>
+</div>
+
+@section Scripts{
+    <script>
+        var roomName='umraat_secret';
+        const domain = 'meet.jit.si';
+        const options = {
+            roomName: roomName,
+            width: 700,
+            height: 700,
+            parentNode: document.querySelector('#meet'),
+            userInfo: {
+                email: 'abdulrahman@alamiah.net',
+                displayName: 'Abdul Rahman'
+            },
+            configOverwrite: {
+                startWithAudioMuted: true,
+                startWithVideoMuted: true,
+                 prejoinConfig: {
+                     // When 'true', it shows an intermediate page before joining, where the user can configure their devices.
+                     // This replaces `prejoinPageEnabled`.
+                     enabled: false,
+                     // Hides the participant name editing field in the prejoin screen.
+                     // If requireDisplayName is also set as true, a name should still be provided through
+                     // either the jwt or the userInfo from the iframe api init object in order for this to have an effect.
+                     hideDisplayName: false,
+                     // List of buttons to hide from the extra join options dropdown.
+                     hideExtraJoinButtons: ['no-audio', 'by-phone'],
+                 }
+            },
+            interfaceConfigOverwrite: {
+                //SHOW_JITSI_WATERMARK: false,
+                //TOOLBAR_BUTTONS: [],
+            },
+            onload:function(){
+                console.log("IFrame Loaded");
+            }
+        };
+        const api = new JitsiMeetExternalAPI(domain, options);
+
+        //subject
+        api.executeCommand('toggleTileView');
+
+    </script>
+}
