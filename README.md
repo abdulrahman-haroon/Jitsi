@@ -19,4 +19,10 @@ https://github.com/jitsi/jitsi-meet/blob/master/interface_config.js
 
 
 --> Toolbars:
-https://github.com/jitsi/jitsi-meet/blob/a582f1c191bc193e5c7e40de44fbce5a9ffbde3b/config.js#L448
+ TOOLBAR_BUTTONS: [
+        'microphone', 'camera', 'closedcaptions', 'desktop', 'embedmeeting', 'fullscreen',
+        'fodeviceselection', 'hangup', 'profile', 'chat', 'recording',
+        'livestreaming', 'etherpad', 'sharedvideo', 'shareaudio', 'settings', 'raisehand',
+        'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts',
+        'tileview', 'select-background', 'download', 'help', 'mute-everyone', 'mute-video-everyone', 'security'
+ ],
